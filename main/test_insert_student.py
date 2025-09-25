@@ -1,10 +1,9 @@
-# внесение изменений
 from sqlalchemy import text
 
 
 def test_insert_student(connection):
     connection.execute(
-        text("INSERT INTO students (id, name, age) VALUES (1, 'Alice', 25)")
+        text("INSERT INTO students (id, name) VALUES (1, 'Alice')")
     )
     result = connection.execute(
         text("SELECT * FROM students WHERE id=1")
